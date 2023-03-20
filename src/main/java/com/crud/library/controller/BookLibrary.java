@@ -14,6 +14,12 @@ public class BookLibrary {
 
     private final BookService bookService;
 
+    @GetMapping("/{id}")
+    public ResponseEntity<String> countBookTitles(@PathVariable int id) throws NotFoundException {
+        Book book = bookService.findBookById(id);
+        return ResponseEntity.ok(bookService.countBookTitles(book));
+    }
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> createBook(@RequestBody Book book) {
         bookService.saveBook(book);
