@@ -19,8 +19,4 @@ public class ReaderService {
     public Reader saveReader(final Reader reader) {
         return repository.save(reader);
     }
-
-    public void removeReader(final int id) {
-        repository.deleteById(id);
-    }
 }

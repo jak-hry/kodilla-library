@@ -6,7 +6,6 @@ import com.crud.library.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,12 +34,12 @@ public class BookService {
 
         int count = 0;
         List<Book> bookList = repository.findAll();
-        for (Book books : bookList){
+        for (Book books : bookList) {
             if (books.getTitle().equals(book.getTitle())) {
                 count++;
             }
         }
-        return "the number of book duplicates: " + book.getTitle() + " is"  + count;
+        return "the number of book duplicates: " + book.getTitle() + " is" + count;
     }
 
 //    public List<Book> removeDuplicateBooks() {
