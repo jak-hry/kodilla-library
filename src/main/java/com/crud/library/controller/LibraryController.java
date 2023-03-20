@@ -43,12 +43,12 @@ public class LibraryController {
         return ResponseEntity.ok(bookService.countBookTitles(book));
     }
 
-    @PostMapping
+    @PostMapping("/reader")
     public ResponseEntity<Reader> createReader(@RequestBody Reader reader) {
         return ResponseEntity.ok(readerService.saveReader(reader));
     }
 
-    @PostMapping
+    @PostMapping("/copy")
     public ResponseEntity<Copy> createCopy(@RequestBody Copy copy) {
         return ResponseEntity.ok(copyService.saveCopy(copy));
     }
